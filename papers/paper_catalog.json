@@ -1,0 +1,224 @@
+{
+  "papers": [
+    {
+      "id": "paper_001",
+      "title": "Local governance of sport: a national survey on how public opinion evaluates municipal sports development and priorities",
+      "authors": ["Sesinando, A. D.", "Seguí-Urbaneja, J.", "Teixeira, M. C."],
+      "year": 2026,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Politics, Policy and Law",
+      "volume": 8,
+      "doi": "10.3389/fspor.2026.1751428",
+      "filename": "sesinando2026local_governance_sport.pdf"
+    },
+    {
+      "id": "paper_002",
+      "title": "Current political uses of sport revised: beyond public diplomacy and sportswashing",
+      "authors": ["Costa, R.", "Moriconi, M."],
+      "year": 2024,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Politics, Policy and Law",
+      "volume": 6,
+      "doi": "10.3389/fspor.2024.1316732",
+      "filename": "costa2024political_uses_sport.pdf"
+    },
+    {
+      "id": "paper_003",
+      "title": "Policy vs. practice in sport and climate change: the perspectives of key actors in global sport and international development",
+      "authors": ["Ali, A. E.", "Millington, R.", "Darnell, S.", "Smith, T."],
+      "year": 2024,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Politics, Policy and Law",
+      "volume": 6,
+      "doi": "10.3389/fspor.2024.1297739",
+      "filename": "ali2024policy_practice_climate_sport.pdf"
+    },
+    {
+      "id": "paper_004",
+      "title": "Gender Differences in Anti-Doping Rule Violations Based on a 19-Year Data Analysis from the Serbian Anti-Doping Agency: National Study",
+      "authors": ["Milovanovic, G.", "Rasic Ozegovic, J.", "Jovicic, D.", "Radivojevic, N.", "Rancic, N.", "Stojicevic, J.", "Marjanović, S.", "Vesic, Z.", "Vukasinovic-Vesic, M."],
+      "year": 2025,
+      "venue": "Sports",
+      "section": null,
+      "volume": 13,
+      "doi": "10.3390/sports13120432",
+      "filename": "milovanovic2025gender_differences_anti_doping.pdf"
+    },
+    {
+      "id": "paper_005",
+      "title": "Changes in Physical Activity during the COVID-19 Pandemic—An Analysis of Differences Based on Mitigation Policies and Incidence Values in the Federal States of Germany",
+      "authors": ["Beck, F.", "Mutz, M.", "Engels, E. S.", "Reimers, A. K."],
+      "year": 2021,
+      "venue": "Sports",
+      "section": null,
+      "volume": 9,
+      "doi": "10.3390/sports9070102",
+      "filename": "beck2021physical_activity_covid_germany.pdf"
+    },
+    {
+      "id": "paper_006",
+      "title": "Exploring Children’s Physical Activity Behaviours According to Location: A Mixed-Methods Case Study",
+      "authors": ["Khawaja, I.", "Woodfield, L.", "Collins, P.", "Benkwitz, A.", "Nevill, A."],
+      "year": 2019,
+      "venue": "Sports",
+      "section": null,
+      "volume": 7,
+      "doi": "10.3390/sports7110240",
+      "filename": "khawaja2019children_physical_activity_location.pdf"
+    },
+    {
+      "id": "paper_007",
+      "title": "Differences in the Levels of Physical Activity and Sport Habits between Men and Women in Cartagena (Spain)",
+      "authors": ["Armada, C.", "Sánchez-Alcaraz, B. J.", "Courel-Ibáñez, J.", "Segarra-Vicens, E."],
+      "year": 2024,
+      "venue": "Sports",
+      "section": null,
+      "volume": 12,
+      "doi": "10.3390/sports12010028",
+      "filename": "armada2024physical_activity_cartagena.pdf"
+    },
+    {
+      "id": "paper_008",
+      "title": "Physical activity, sports participation, and sustainable development in the Ibero-American region: a pilot implementation of indicators in Chile, Costa Rica, and Ecuador",
+      "authors": ["Bauer, R.", "Sánchez-García, R.", "Hernández, D.", "Hernández-Angeles, D. F.", "González, S.", "Nieto, I.", "Mayo, X.", "Jiménez, A."],
+      "year": 2025,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Politics, Policy and Law",
+      "volume": 7,
+      "doi": "10.3389/fspor.2025.1607167",
+      "filename": "bauer2025physical_activity_sustainable_development.pdf"
+    },
+    {
+      "id": "paper_009",
+      "title": "Policy analysis in sport: a review of mainstream meso-level frameworks and developing more sustainable policy for grassroots sport",
+      "authors": ["Mountifield, C."],
+      "year": 2025,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Politics, Policy and Law",
+      "volume": 7,
+      "doi": "10.3389/fspor.2025.1529906",
+      "filename": "mountifield2025policy_analysis_grassroots.pdf"
+    },
+    {
+      "id": "paper_010",
+      "title": "Playing for progress: policy advocacy in sport for development",
+      "authors": ["Moustakas, L.", "Carney, S.", "Fischer, S. A. J.", "Richardson, A.", "Petry, K.", "Svoboda, A.", "Hofmann, A.", "Sanders, B."],
+      "year": 2025,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Politics, Policy and Law",
+      "volume": 7,
+      "doi": "10.3389/fspor.2025.1546222",
+      "filename": "moustakas2025policy_advocacy_sport_development.pdf"
+    },
+    {
+      "id": "paper_011",
+      "title": "The Legacy of Sport Events for Emerging Nations",
+      "authors": ["Knott, B.", "Tinaz, C."],
+      "year": 2022,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sport, Leisure, Tourism, and Events",
+      "volume": 4,
+      "doi": "10.3389/fspor.2022.926334",
+      "filename": "knott2022legacy_sport_events_emerging_nations.pdf"
+    },
+    {
+      "id": "paper_012",
+      "title": "From centralization to cooperation: The development and reform process of sports venues in China from 1949 to 2022",
+      "authors": ["Fang, X.", "Chen, Y.", "Li, J."],
+      "year": 2023,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sport, Leisure, Tourism, and Events",
+      "volume": 4,
+      "doi": "10.3389/fspor.2022.1077211",
+      "filename": "fang2023sports_venues_china_reform.pdf"
+    },
+    {
+      "id": "paper_013",
+      "title": "Research patterns in sports law and sports governance: a scopus bibliometric study",
+      "authors": ["Kamenecka-Usova, M.", "Korde, Z.", "Zidens, J.", "Luika, S.", "Agapova, O.", "Palkova, K.", "Martinsone, K."],
+      "year": 2025,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Politics, Policy and Law",
+      "volume": 7,
+      "doi": "10.3389/fspor.2025.1590858",
+      "filename": "kamenecka2025sports_law_bibliometric.pdf"
+    },
+    {
+      "id": "paper_014",
+      "title": "Sports and leisure coverage in Brazil: an analysis of the last 20 years",
+      "authors": ["Viana, R. B.", "Rocha-Silva, R.", "Morais, M. J.", "Coswig, V. S.", "Simim, M. A. M.", "Vancini, R. L.", "Andrade, M. S.", "Lira, C. A. B."],
+      "year": 2024,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Politics, Policy and Law",
+      "volume": 6,
+      "doi": "10.3389/fspor.2024.1347212",
+      "filename": "viana2024sports_leisure_brazil_coverage.pdf"
+    },
+    {
+      "id": "paper_015",
+      "title": "Human rights and the olympics: from an ideological paradox to a new anti-corruption legacy",
+      "authors": ["Chatziefstathiou, D.", "Rofe, J. S."],
+      "year": 2024,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Politics, Policy and Law",
+      "volume": 6,
+      "doi": "10.3389/fspor.2024.1365150",
+      "filename": "chatziefstathiou2024human_rights_olympics.pdf"
+    },
+    {
+      "id": "paper_016",
+      "title": "Structural and developmental characteristics of Japanese elite athletes: a longitudinal case study of a talent identification and development programme in Fukuoka prefecture",
+      "authors": ["Hagiwara, M.", "Kinugasa, T.", "Haramura, M.", "Nakao, T.", "Teshima, K.", "Yamashita, S.", "Shirai, K."],
+      "year": 2026,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Elite Sports and Performance Enhancement",
+      "volume": 8,
+      "doi": "10.3389/fspor.2026.1748585",
+      "filename": "hagiwara2026japanese_elite_athletes.pdf"
+    },
+    {
+      "id": "paper_017",
+      "title": "Artificial Intelligence and Machine Learning in Sport Research: An Introduction for Non-data Scientists",
+      "authors": ["Chmait, N.", "Westerbeek, H."],
+      "year": 2021,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Management, Marketing, and Economics",
+      "volume": 3,
+      "doi": "10.3389/fspor.2021.682287",
+      "filename": "chmait2021ai_machine_learning_sport.pdf"
+    },
+    {
+      "id": "paper_018",
+      "title": "Women in International Elite Athletics: Gender (in)equality and National Participation",
+      "authors": ["Meier, H. E.", "Konjer, M. V.", "Krieger, J."],
+      "year": 2021,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Management, Marketing, and Economics",
+      "volume": 3,
+      "doi": "10.3389/fspor.2021.709640",
+      "filename": "meier2021women_elite_athletics.pdf"
+    },
+    {
+      "id": "paper_019",
+      "title": "Assessing International Sport Federations' Sustainability Practices: Toward Integrating Sustainability in Their Main Sports Events",
+      "authors": ["Moon, P.", "Bayle, E.", "François, A."],
+      "year": 2022,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Management, Marketing, and Economics",
+      "volume": 3,
+      "doi": "10.3389/fspor.2021.752085",
+      "filename": "moon2022international_sport_federations_sustainability.pdf"
+    },
+    {
+      "id": "paper_020",
+      "title": "Social Media and the Olympics: A Chance for Improving Gender Equality",
+      "authors": ["Grabmüllerová, A."],
+      "year": 2022,
+      "venue": "Frontiers in Sports and Active Living",
+      "section": "Sports Management, Marketing, and Economics",
+      "volume": 4,
+      "doi": "10.3389/fspor.2022.825440",
+      "filename": "grabmullerova2022social_media_olympics_gender_equality.pdf"
+    }
+  ]
+}

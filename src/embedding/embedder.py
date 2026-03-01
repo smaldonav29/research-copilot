@@ -1,4 +1,10 @@
+from dotenv import load_dotenv
+import os
 from openai import OpenAI
+
+
+# Carga variables desde .env
+load_dotenv()
 
 
 class OpenAIEmbedder:
@@ -7,6 +13,7 @@ class OpenAIEmbedder:
     """
 
     def __init__(self, model: str = "text-embedding-3-small"):
+        # OpenAI automáticamente lee OPENAI_API_KEY desde el entorno
         self.client = OpenAI()
         self.model = model
 
@@ -14,7 +21,6 @@ class OpenAIEmbedder:
         """
         Generate embeddings for multiple texts.
         """
-
         response = self.client.embeddings.create(
             model=self.model,
             input=texts
@@ -26,5 +32,4 @@ class OpenAIEmbedder:
         """
         Generate embedding for a single query.
         """
-
         return self.embed_texts([query])[0]

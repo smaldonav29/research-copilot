@@ -24,4 +24,12 @@ class Retriever:
             n_results=top_k
         )
 
-        return results
+        if not results or "documents" not in results:
+            return []
+
+        documents = results["documents"]
+
+        if isinstance(documents, list) and len(documents) > 0:
+            return documents[0]
+
+        return []

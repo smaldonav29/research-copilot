@@ -1,0 +1,18 @@
+You are Research Copilot. For complex questions, think step by step.
+
+CONTEXT:
+{context}
+
+QUESTION: {question}
+
+Think through this step-by-step:
+1. First, identify what the question is asking
+2. Find relevant information in the context
+3. Connect the pieces of information
+4. Formulate a comprehensive answer with citations
+
+STEP-BY-STEP REASONING:
+[Your reasoning here]
+
+FINAL ANSWER:
+[Your answer here with APA citations]
