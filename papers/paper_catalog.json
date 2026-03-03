@@ -9,7 +9,8 @@
       "section": "Sports Politics, Policy and Law",
       "volume": 8,
       "doi": "10.3389/fspor.2026.1751428",
-      "filename": "sesinando2026local_governance_sport.pdf"
+      "filename": "sesinando2026local_governance_sport.pdf",
+      "topics": ["sport governance", "local government", "municipal sports", "public opinion", "sports policy"]
     },
     {
       "id": "paper_002",
@@ -20,7 +21,8 @@
       "section": "Sports Politics, Policy and Law",
       "volume": 6,
       "doi": "10.3389/fspor.2024.1316732",
-      "filename": "costa2024political_uses_sport.pdf"
+      "filename": "costa2024political_uses_sport.pdf",
+      "topics": ["sport politics", "public diplomacy", "sportswashing", "soft power", "sport governance"]
     },
     {
       "id": "paper_003",
@@ -31,7 +33,8 @@
       "section": "Sports Politics, Policy and Law",
       "volume": 6,
       "doi": "10.3389/fspor.2024.1297739",
-      "filename": "ali2024policy_practice_climate_sport.pdf"
+      "filename": "ali2024policy_practice_climate_sport.pdf",
+      "topics": ["climate change", "sports policy", "sustainability", "international development", "sport for development"]
     },
     {
       "id": "paper_004",
@@ -42,7 +45,8 @@
       "section": null,
       "volume": 13,
       "doi": "10.3390/sports13120432",
-      "filename": "milovanovic2025gender_differences_anti_doping.pdf"
+      "filename": "milovanovic2025gender_differences_anti_doping.pdf",
+      "topics": ["anti-doping", "gender differences", "doping violations", "sports law", "Serbia"]
     },
     {
       "id": "paper_005",
@@ -53,18 +57,20 @@
       "section": null,
       "volume": 9,
       "doi": "10.3390/sports9070102",
-      "filename": "beck2021physical_activity_covid_germany.pdf"
+      "filename": "beck2021physical_activity_covid_germany.pdf",
+      "topics": ["physical activity", "COVID-19", "pandemic", "public health policy", "Germany"]
     },
     {
       "id": "paper_006",
-      "title": "Exploring Children’s Physical Activity Behaviours According to Location: A Mixed-Methods Case Study",
+      "title": "Exploring Children's Physical Activity Behaviours According to Location: A Mixed-Methods Case Study",
       "authors": ["Khawaja, I.", "Woodfield, L.", "Collins, P.", "Benkwitz, A.", "Nevill, A."],
       "year": 2019,
       "venue": "Sports",
       "section": null,
       "volume": 7,
       "doi": "10.3390/sports7110240",
-      "filename": "khawaja2019children_physical_activity_location.pdf"
+      "filename": "khawaja2019children_physical_activity_location.pdf",
+      "topics": ["children", "physical activity", "location", "mixed methods", "youth sport"]
     },
     {
       "id": "paper_007",
@@ -75,7 +81,8 @@
       "section": null,
       "volume": 12,
       "doi": "10.3390/sports12010028",
-      "filename": "armada2024physical_activity_cartagena.pdf"
+      "filename": "armada2024physical_activity_cartagena.pdf",
+      "topics": ["physical activity", "gender", "sport habits", "Spain", "public health"]
     },
     {
       "id": "paper_008",
@@ -86,7 +93,8 @@
       "section": "Sports Politics, Policy and Law",
       "volume": 7,
       "doi": "10.3389/fspor.2025.1607167",
-      "filename": "bauer2025physical_activity_sustainable_development.pdf"
+      "filename": "bauer2025physical_activity_sustainable_development.pdf",
+      "topics": ["physical activity", "sustainable development", "Latin America", "sports participation", "indicators"]
     },
     {
       "id": "paper_009",
@@ -97,7 +105,8 @@
       "section": "Sports Politics, Policy and Law",
       "volume": 7,
       "doi": "10.3389/fspor.2025.1529906",
-      "filename": "mountifield2025policy_analysis_grassroots.pdf"
+      "filename": "mountifield2025policy_analysis_grassroots.pdf",
+      "topics": ["sports policy", "policy analysis", "grassroots sport", "sustainability", "sport governance"]
     },
     {
       "id": "paper_010",
@@ -108,7 +117,8 @@
       "section": "Sports Politics, Policy and Law",
       "volume": 7,
       "doi": "10.3389/fspor.2025.1546222",
-      "filename": "moustakas2025policy_advocacy_sport_development.pdf"
+      "filename": "moustakas2025policy_advocacy_sport_development.pdf",
+      "topics": ["sport for development", "policy advocacy", "social development", "sport governance", "NGO"]
     },
     {
       "id": "paper_011",
@@ -119,7 +129,8 @@
       "section": "Sport, Leisure, Tourism, and Events",
       "volume": 4,
       "doi": "10.3389/fspor.2022.926334",
-      "filename": "knott2022legacy_sport_events_emerging_nations.pdf"
+      "filename": "knott2022legacy_sport_events_emerging_nations.pdf",
+      "topics": ["sport events", "legacy", "emerging nations", "mega-events", "sport tourism"]
     },
     {
       "id": "paper_012",
@@ -130,7 +141,8 @@
       "section": "Sport, Leisure, Tourism, and Events",
       "volume": 4,
       "doi": "10.3389/fspor.2022.1077211",
-      "filename": "fang2023sports_venues_china_reform.pdf"
+      "filename": "fang2023sports_venues_china_reform.pdf",
+      "topics": ["sports venues", "China", "sport infrastructure", "sport reform", "sport policy"]
     },
     {
       "id": "paper_013",
@@ -141,7 +153,8 @@
       "section": "Sports Politics, Policy and Law",
       "volume": 7,
       "doi": "10.3389/fspor.2025.1590858",
-      "filename": "kamenecka2025sports_law_bibliometric.pdf"
+      "filename": "kamenecka2025sports_law_bibliometric.pdf",
+      "topics": ["sports law", "sport governance", "bibliometrics", "Scopus", "research trends"]
     },
     {
       "id": "paper_014",
@@ -152,7 +165,8 @@
       "section": "Sports Politics, Policy and Law",
       "volume": 6,
       "doi": "10.3389/fspor.2024.1347212",
-      "filename": "viana2024sports_leisure_brazil_coverage.pdf"
+      "filename": "viana2024sports_leisure_brazil_coverage.pdf",
+      "topics": ["sports policy", "leisure", "Brazil", "public policy", "sport coverage"]
     },
     {
       "id": "paper_015",
@@ -163,7 +177,8 @@
       "section": "Sports Politics, Policy and Law",
       "volume": 6,
       "doi": "10.3389/fspor.2024.1365150",
-      "filename": "chatziefstathiou2024human_rights_olympics.pdf"
+      "filename": "chatziefstathiou2024human_rights_olympics.pdf",
+      "topics": ["human rights", "Olympics", "anti-corruption", "sport governance", "IOC"]
     },
     {
       "id": "paper_016",
@@ -174,7 +189,8 @@
       "section": "Elite Sports and Performance Enhancement",
       "volume": 8,
       "doi": "10.3389/fspor.2026.1748585",
-      "filename": "hagiwara2026japanese_elite_athletes.pdf"
+      "filename": "hagiwara2026japanese_elite_athletes.pdf",
+      "topics": ["elite athletes", "talent identification", "athlete development", "Japan", "longitudinal study"]
     },
     {
       "id": "paper_017",
@@ -185,7 +201,8 @@
       "section": "Sports Management, Marketing, and Economics",
       "volume": 3,
       "doi": "10.3389/fspor.2021.682287",
-      "filename": "chmait2021ai_machine_learning_sport.pdf"
+      "filename": "chmait2021ai_machine_learning_sport.pdf",
+      "topics": ["artificial intelligence", "machine learning", "sport research", "data science", "sport analytics"]
     },
     {
       "id": "paper_018",
@@ -196,7 +213,8 @@
       "section": "Sports Management, Marketing, and Economics",
       "volume": 3,
       "doi": "10.3389/fspor.2021.709640",
-      "filename": "meier2021women_elite_athletics.pdf"
+      "filename": "meier2021women_elite_athletics.pdf",
+      "topics": ["gender equality", "women in sport", "elite athletics", "national participation", "sport policy"]
     },
     {
       "id": "paper_019",
@@ -207,7 +225,8 @@
       "section": "Sports Management, Marketing, and Economics",
       "volume": 3,
       "doi": "10.3389/fspor.2021.752085",
-      "filename": "moon2022international_sport_federations_sustainability.pdf"
+      "filename": "moon2022international_sport_federations_sustainability.pdf",
+      "topics": ["sustainability", "sport federations", "mega-events", "environmental policy", "sport governance"]
     },
     {
       "id": "paper_020",
@@ -218,7 +237,8 @@
       "section": "Sports Management, Marketing, and Economics",
       "volume": 4,
       "doi": "10.3389/fspor.2022.825440",
-      "filename": "grabmullerova2022social_media_olympics_gender_equality.pdf"
+      "filename": "grabmullerova2022social_media_olympics_gender_equality.pdf",
+      "topics": ["social media", "Olympics", "gender equality", "digital media", "sport communication"]
     }
   ]
 }
