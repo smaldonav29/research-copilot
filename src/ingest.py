@@ -31,7 +31,7 @@ COLLECTION_NAME = "papers"
 
 
 # ---------------------------------------------------
-# Metadata sanitizer (CRITICAL FIX)
+# Metadata sanitizer
 # ---------------------------------------------------
 def clean_metadata(meta: dict) -> dict:
     """
@@ -43,7 +43,6 @@ def clean_metadata(meta: dict) -> dict:
     cleaned = {}
 
     for k, v in meta.items():
-        # Convert numpy types safely
         try:
             if hasattr(v, "item"):
                 v = v.item()
@@ -68,16 +67,16 @@ def load_catalog() -> list[dict]:
 def ingest(chunk_size: int = 512, chunk_overlap: int = 50, reset: bool = False):
     logger.info(f"Starting ingestion | chunk_size={chunk_size} | overlap={chunk_overlap}")
 
-    # 1. Load catalog
+    # 1️⃣ Load catalog
     papers = load_catalog()
     logger.info(f"Found {len(papers)} papers in catalog")
 
-    # 2. Setup components
+    # 2️⃣ Setup components
     chunker = TokenChunker(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     embedder = OpenAIEmbedder()
     vectorstore = ChromaVectorStore(persist_directory=CHROMA_DIR)
 
-    # 3. Reset collection if requested
+    # 3️⃣ Reset collection if requested
     if reset:
         logger.warning("Resetting ChromaDB collection...")
         try:
@@ -86,13 +85,13 @@ def ingest(chunk_size: int = 512, chunk_overlap: int = 50, reset: bool = False):
         except Exception:
             pass
 
-    vectorstore.create_collection(COLLECTION_NAME)
+    collection = vectorstore.create_collection(COLLECTION_NAME)
 
-    # 4. Process each paper
     total_chunks = 0
     skipped = 0
     successful = 0
 
+    # 4️⃣ Process each paper
     for paper in tqdm(papers, desc="Ingesting papers"):
         pdf_path = PAPERS_DIR / paper["filename"]
 
@@ -102,17 +101,19 @@ def ingest(chunk_size: int = 512, chunk_overlap: int = 50, reset: bool = False):
             continue
 
         try:
-            # Extract text
+            # -------------------------
+            # Extract & clean text
+            # -------------------------
             extracted = extract_text_from_pdf(str(pdf_path))
             raw_text = extracted["text"]
             clean_text = clean_extracted_text(raw_text)
 
             # -------------------------
-            # Build paper metadata
+            # Build paper metadata (FIXED)
             # -------------------------
             paper_metadata = {
                 "paper_id": str(paper["id"]),
-                "paper_title": str(paper["title"]),
+                "title": str(paper["title"]),  # ✅ FIXED (consistent with generator)
                 "authors": ", ".join(map(str, paper.get("authors", []))),
                 "year": int(paper["year"]) if paper.get("year") else None,
                 "venue": str(paper.get("venue", "")),
@@ -120,7 +121,6 @@ def ingest(chunk_size: int = 512, chunk_overlap: int = 50, reset: bool = False):
                 "section": str(paper.get("section", "")),
             }
 
-            # Clean base metadata
             paper_metadata = clean_metadata(paper_metadata)
 
             # -------------------------
@@ -151,7 +151,7 @@ def ingest(chunk_size: int = 512, chunk_overlap: int = 50, reset: bool = False):
                 metadatas.append(meta)
 
             # -------------------------
-            # Generate embeddings
+            # Generate embeddings (batched)
             # -------------------------
             all_embeddings = []
             batch_size = 100
@@ -164,7 +164,7 @@ def ingest(chunk_size: int = 512, chunk_overlap: int = 50, reset: bool = False):
             # -------------------------
             # Store in ChromaDB
             # -------------------------
-            vectorstore.add_documents(
+            collection.add(
                 ids=ids,
                 documents=documents,
                 embeddings=all_embeddings,
@@ -184,19 +184,17 @@ def ingest(chunk_size: int = 512, chunk_overlap: int = 50, reset: bool = False):
     logger.info("─" * 60)
     logger.info("Ingestion complete!")
     logger.info(f"  Papers processed : {successful}/{len(papers)}")
-    logger.info(f"  Papers skipped   : {skipped} (PDF not found)")
+    logger.info(f"  Papers skipped   : {skipped}")
     logger.info(f"  Total chunks     : {total_chunks}")
     logger.info(f"  ChromaDB path    : {CHROMA_DIR}")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Ingest PDFs into ChromaDB")
-    parser.add_argument("--chunk-size", type=int, default=512,
-                        help="Token chunk size (default: 512)")
-    parser.add_argument("--chunk-overlap", type=int, default=50,
-                        help="Token overlap between chunks (default: 50)")
-    parser.add_argument("--reset", action="store_true",
-                        help="Delete and recreate ChromaDB collection")
+    parser.add_argument("--chunk-size", type=int, default=512)
+    parser.add_argument("--chunk-overlap", type=int, default=50)
+    parser.add_argument("--reset", action="store_true")
+
     args = parser.parse_args()
 
     ingest(
