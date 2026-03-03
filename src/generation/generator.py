@@ -7,14 +7,16 @@ import json
 class Generator:
     """
     Generates answers using GPT-4o-mini with multiple prompt strategies.
-    Handles context formatting, APA citations, and JSON output.
+    Handles context formatting, APA citations, JSON output,
+    and optional debugging of retrieved metadata.
     """
 
-    def __init__(self):
+    def __init__(self, debug: bool = False):
         self.llm = ChatOpenAI(
             model="gpt-4o-mini",
             temperature=0
         )
+        self.debug = debug
 
     # --------------------------------------------------
     # Load Prompt Strategy
@@ -27,6 +29,24 @@ class Generator:
 
         with open(path, "r", encoding="utf-8") as f:
             return f.read()
+
+    # --------------------------------------------------
+    # Debug Metadata (NEW)
+    # --------------------------------------------------
+    def _debug_metadata(self, context_chunks: list):
+        if not self.debug:
+            return
+
+        print("\n🔎 DEBUG — Retrieved Context Metadata\n" + "-" * 50)
+
+        for i, chunk in enumerate(context_chunks[:3]):  # limit to first 3
+            metadata = chunk.get("metadata", {})
+            print(f"\nSource {i + 1}:")
+            print("Title  :", metadata.get("title"))
+            print("Authors:", metadata.get("authors"))
+            print("Year   :", metadata.get("year"))
+
+        print("-" * 50 + "\n")
 
     # --------------------------------------------------
     # Format Context
@@ -64,9 +84,12 @@ class Generator:
             score_text = f"Similarity: {round(score, 3)}\n" if score else ""
 
             header_parts = []
-            if title:   header_parts.append(f"Title: {title}")
-            if authors: header_parts.append(f"Authors: {authors}")
-            if year:    header_parts.append(f"Year: {year}")
+            if title:
+                header_parts.append(f"Title: {title}")
+            if authors:
+                header_parts.append(f"Authors: {authors}")
+            if year:
+                header_parts.append(f"Year: {year}")
 
             header = "\n".join(header_parts)
 
@@ -94,18 +117,12 @@ class Generator:
 
         for chunk in context_chunks:
 
-            if isinstance(chunk, dict):
-                metadata = chunk.get("metadata", {}) or {}
-            elif hasattr(chunk, "metadata"):
-                metadata = getattr(chunk, "metadata", {}) or {}
-            else:
-                metadata = {}
+            metadata = chunk.get("metadata", {}) if isinstance(chunk, dict) else {}
 
             title   = metadata.get("title")
             authors = metadata.get("authors")
             year    = metadata.get("year")
 
-            # Skip if incomplete metadata or duplicate
             if not title or not authors or not year:
                 continue
             if title in seen_titles:
@@ -123,7 +140,6 @@ class Generator:
     # Parse JSON Answer safely
     # --------------------------------------------------
     def _parse_json_answer(self, raw: str) -> dict:
-        # Strip markdown code fences if present
         clean = raw.strip()
         if clean.startswith("```"):
             clean = clean.split("```")[1]
@@ -148,7 +164,6 @@ class Generator:
         context_chunks: list,
         strategy: str = "v1_delimiters"
     ):
-        # No context → avoid hallucination
         if not context_chunks:
             return {
                 "answer": (
@@ -160,6 +175,9 @@ class Generator:
                 "citation_map": {}
             }
 
+        # 🔎 DEBUG HERE (before generation)
+        self._debug_metadata(context_chunks)
+
         template = self.load_prompt(strategy)
         context  = self.format_context(context_chunks)
 
@@ -169,7 +187,6 @@ class Generator:
                 context=context
             )
         except KeyError:
-            # Fallback: append question and context directly
             final_prompt = (
                 f"{template}\n\n"
                 f"Question:\n{question}\n\n"
@@ -182,7 +199,6 @@ class Generator:
 
         raw_answer = response.content
 
-        # Handle JSON strategy
         if "json" in strategy.lower():
             answer = self._parse_json_answer(raw_answer)
         else:

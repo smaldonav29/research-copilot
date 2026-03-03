@@ -8,24 +8,24 @@ import re
 class RAGPipeline:
     """
     Main orchestrator:
-    - Metadata Router (improved, less aggressive)
+    - Metadata Router (explicit listing only)
     - Retrieval
     - Generation
+    - Debug support
     """
 
     def __init__(self):
         self.retriever = Retriever()
-        self.generator = Generator()
+        self.generator = Generator(debug=True)  # ✅ DEBUG ACTIVADO
 
     # ==========================================================
-    # 🔎 SMART METADATA ROUTER (Only explicit listing requests)
+    # 🔎 SMART METADATA ROUTER
     # ==========================================================
     def is_metadata_query(self, question: str) -> bool:
 
         q = question.lower()
 
         metadata_patterns = [
-            # English - only explicit listing/enumeration requests
             r"\blist (all |the |my )?(papers|titles|authors|documents)\b",
             r"\bshow (all |the |my )?(papers|titles|authors|documents)\b",
             r"\bwhat (papers|titles|documents) (do you have|are available|are indexed)\b",
@@ -36,7 +36,6 @@ class RAGPipeline:
             r"\blist of papers\b",
             r"\blist of titles\b",
 
-            # Spanish - only explicit listing requests
             r"\blistar (los |mis )?papers\b",
             r"\blistar (los |mis )?títulos\b",
             r"\bcuántos papers\b",
@@ -48,11 +47,7 @@ class RAGPipeline:
             r"\blista de títulos\b",
         ]
 
-        for pattern in metadata_patterns:
-            if re.search(pattern, q):
-                return True
-
-        return False
+        return any(re.search(pattern, q) for pattern in metadata_patterns)
 
     # ==========================================================
     # 📂 Metadata Handler
@@ -60,14 +55,14 @@ class RAGPipeline:
     def handle_metadata_query(self):
 
         try:
-            catalog_path = os.path.join(
-                os.path.dirname(__file__),
-                "..",
-                "papers",
-                "paper_catalog.json"
+            catalog_path = os.path.abspath(
+                os.path.join(
+                    os.path.dirname(__file__),
+                    "..",
+                    "papers",
+                    "paper_catalog.json"
+                )
             )
-
-            catalog_path = os.path.abspath(catalog_path)
 
             if not os.path.exists(catalog_path):
                 return "Catalog file not found.", []
@@ -85,17 +80,20 @@ class RAGPipeline:
                 title = paper.get("title", "Unknown Title")
                 authors = paper.get("authors", [])
                 year = paper.get("year", "N/A")
-                author_str = ", ".join(authors[:2]) + (" et al." if len(authors) > 2 else "")
+
+                author_str = ", ".join(authors[:2])
+                if len(authors) > 2:
+                    author_str += " et al."
+
                 lines.append(f"{i}. **{title}** — {author_str} ({year})")
 
-            formatted = "\n".join(lines)
-            return formatted, []
+            return "\n".join(lines), []
 
         except Exception as e:
             return f"Error reading catalog: {str(e)}", []
 
     # ==========================================================
-    # 🔄 Normal Retrieval (Robust Parsing)
+    # 🔄 Normalize Retrieval Output
     # ==========================================================
     def _parse_retrieval_results(self, results):
 
@@ -104,7 +102,6 @@ class RAGPipeline:
         if not results:
             return retrieved_chunks
 
-        # CASE 1: Retriever returns list directly
         if isinstance(results, list):
             for item in results:
                 if isinstance(item, dict):
@@ -114,7 +111,6 @@ class RAGPipeline:
                     })
             return retrieved_chunks
 
-        # CASE 2: Retriever returns dict (Chroma style)
         if isinstance(results, dict):
             documents_list = results.get("documents", [])
             metadatas_list = results.get("metadatas", [])
@@ -140,7 +136,7 @@ class RAGPipeline:
     # ==========================================================
     def query(self, question: str, strategy: str = "v1_delimiters"):
 
-        # 1️⃣ Metadata Shortcut (only for explicit listing queries)
+        # 1️⃣ Metadata Shortcut
         if self.is_metadata_query(question):
             answer_text, citations = self.handle_metadata_query()
             return {
@@ -152,7 +148,7 @@ class RAGPipeline:
             }
 
         # 2️⃣ Retrieval
-        results = self.retriever.retrieve(question)
+        results = self.retriever.retrieve(question, top_k=20)
         retrieved_chunks = self._parse_retrieval_results(results)
 
         # 3️⃣ Generation
